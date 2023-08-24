@@ -18,5 +18,8 @@ class Pdf_protector():
         with open(self.file_path,"wb") as f2:
             pdf_writer.encrypt(self.password)
             pdf_writer.write(f2)
+            print("pdf protected")
 if __name__ =="__main__":
-    Pdf_protector("Cover letter.pdf","Password").protect()
+    filepath=input("File path: ")
+    password=input("Password: ")
+    Pdf_protector(filepath,password).protect()
